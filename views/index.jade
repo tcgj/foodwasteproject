@@ -1,0 +1,59 @@
+doctype html(lang='en')
+head
+    title Food Waste Project
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='stylesheets/index.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js')
+  body
+    nav.navbar.navbar-expand-md.bg-dark.navbar-dark
+      a.navbar-brand(href='#') Home
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+        span.navbar-toggler-icon
+      #collapsibleNavbar.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href='#') Menu
+          li.nav-item
+            a.nav-link(href='#') Account
+        form.form-inline.login-form(action='/action_page.php')
+          label(for='username') Username:
+          input#username.form-control(type='email', placeholder='Enter username', name='username')
+          label(for='pwd') Password:
+          input#pwd.form-control(type='password', placeholder='Enter password', name='pswd')
+          .form-check
+            label.form-check-label
+              input.form-check-input(type='checkbox', name='remember')
+              |  Remember me
+          button.btn.btn-primary(type='submit') Submit
+    #demo.carousel.slide(data-ride='carousel')
+      ul.carousel-indicators
+        li.active(data-target='#demo', data-slide-to='0')
+        li(data-target='#demo', data-slide-to='1')
+        li(data-target='#demo', data-slide-to='2')
+      .carousel-inner
+        .carousel-item.active
+          img(src='images/bannerfood4.jpg', alt='NUS Students', width='1920', height='910')
+          .carousel-caption.caption-RC
+            .caption-box
+              p.caption-RCheader RC Meal Plan System
+              p.caption-RC All your RC Dining Hall Needs
+        .carousel-item
+          img(src='images/bannerfood3.jpg', alt='Delicious Desserts', width='1920', height='910')
+          .carousel-caption.caption-RC
+            .caption-box
+              p.caption-RCheader RC Meal Plan System
+              p.caption-RC All your RC Dining Hall Needs
+        .carousel-item
+          img(src='images/bannerfood2.jpg', alt='Dining Hall', width='1920', height='910')
+          .carousel-caption.caption-RC
+            .caption-box
+              p.caption-RCheader RC Meal Plan System
+              p.caption-RC All your RC Dining Hall Needs
+      a.carousel-control-prev(href='#demo', data-slide='prev')
+        span.carousel-control-prev-icon
+      a.carousel-control-next(href='#demo', data-slide='next')
+        span.carousel-control-next-icon

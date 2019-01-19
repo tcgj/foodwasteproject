@@ -14,6 +14,7 @@ router.get('/login', function(req, res) {
     res.render('login', { 
       title: 'Login',
       "blah" : docs
+    });
   });
 });
 
