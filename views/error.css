@@ -1,0 +1,30 @@
+body {
+  background-color: #999;
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/51oH1BdKXSL._SX425_.jpg");	
+    background-repeat: no-repeat;
+background-position: center;
+ margin-top: 50px;
+ }
+ 
+
+.secondary span {
+
+	font-size: 250%;
+		
+	background-color: grey;
+	color:black;
+	
+}
+
+.tertiary span {
+	border:200px;
+    font-size: 250%;
+	position: relative;
+top: 400px;
+left: 995px;	
+}
+
+
+
+
+	
