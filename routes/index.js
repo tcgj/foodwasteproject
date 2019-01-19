@@ -8,7 +8,13 @@ router.get('/', function(req, res, next) {
 
 /* GET some other page */
 router.get('/login', function(req, res) {
-  res.render('login', { title: 'Login' });
+  var db = req.db;
+  var collection = db.get('blah');
+  collection.find({}, {}, function(e, docs) {
+    res.render('login', { 
+      title: 'Login',
+      "blah" : docs
+  });
 });
 
 module.exports = router;
