@@ -20,3 +20,23 @@
 .caption-box {
 	background: rgba(51,51,51,0.9); padding: 10px; border: 1px grey; margin-bottom: 290px;
 }
+
+.menu-image img {
+	width: 93%;
+	margin-left: 50px;
+	margin-top: 40px;
+}
+
+.mt-3 {
+	text-align: left;
+	margin-left: 50px;
+}
+
+.menu-title {
+	font-size: 780%;
+	color: black;
+	border: double; padding: 10px;
+	padding-bottom: 30px
+	
+	
+}
