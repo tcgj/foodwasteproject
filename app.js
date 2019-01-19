@@ -22,10 +22,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.set('trust proxy', 1)
 app.use(require('express-session')({
-      secret: 'keyboard cat',
+      secret: 'what is secret',
       resave: false,
-      saveUninitialized: false
+      saveUninitialized: false,
+      name: 'sesh-id',
+      cookie: { maxAge: 604800000 }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
