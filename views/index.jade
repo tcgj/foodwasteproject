@@ -19,16 +19,21 @@ head
             a.nav-link(href='#') Menu
           li.nav-item
             a.nav-link(href='#') Account
-        form.form-inline.login-form(action='/action_page.php')
-          label(for='username') Username:
-          input#username.form-control(type='email', placeholder='Enter username', name='username')
-          label(for='pwd') Password:
-          input#pwd.form-control(type='password', placeholder='Enter password', name='pswd')
-          .form-check
-            label.form-check-label
-              input.form-check-input(type='checkbox', name='remember')
-              |  Remember me
-          button.btn.btn-primary(type='submit') Submit
+        if(!user)
+          form.form-inline.login-form(action="/login", method="post")
+            .form-group
+              label(for='username') Username:
+              input#username.form-control(type='text', placeholder='Enter NUSNET ID', name='username')
+            .form-group
+              label(for='pwd') Password:
+              input#pwd.form-control(type='password', placeholder='Enter password', name='password')
+            button.btn.btn-primary(type='submit') Submit
+        if(user)
+          ul.navbar-nav.login-form
+            li.nav-item
+              label You are currently logged in as #{user.username}
+            li.nav-item
+              a.nav-link(href="/logout") Logout
     #demo.carousel.slide(data-ride='carousel')
       ul.carousel-indicators
         li.active(data-target='#demo', data-slide-to='0')
