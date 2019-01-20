@@ -43,6 +43,7 @@
     </div>
   </nav>
 
+  <form action="/submit">
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-5">
@@ -55,8 +56,16 @@
           <h1 class="menu-title">Daily Menu</h1>
           <br>
           <p>Select the date to view the menu: </p>
-          <form>
             <select name="date" class="custom-select custom-select-lg mb-3">
+<<<<<<< HEAD
+              <option selected>Large Custom Select Menu</option>
+              <option value="date1">date1</option>
+              <option value="date2">date2</option>
+              <option value="date3">date3</option>
+              <option value="date4">date4</option>
+              <option value="date5">date5</option>
+              <option value="date6">date6</option>
+=======
               <option selected>Select Date</option>
               <option value="date1">20/01/2019</option>
               <option value="date2">21/01/2019</option>
@@ -64,8 +73,9 @@
               <option value="date4">23/01/2019</option>
               <option value="date5">24/01/2019</option>
               <option value="date6">25/01/2019</option>
+>>>>>>> b0807f07e249ae70b2d509f62221897053d02ae6
             </select>
-          </form>
+          
         </div>
       </div>
 
@@ -82,7 +92,6 @@
 }
 
       </style>
-
         <div class = "breakfast">
           <label class="image-radio">
             <img class="img-responsive" src="images/breakfast1.jpg" />
@@ -124,10 +133,9 @@
               <input type="radio" name="image_radio" value="6" />
               <i class="glyphicon glyphicon-ok hidden"></i>
             </label>
-          </div>
-
-      </div>
-
+        </div>
+        <input type="submit" value="Submit">
+    </form>
     </div>
   </div>
 
