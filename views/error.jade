@@ -1,6 +1,12 @@
-extends layout
-
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='main.css')
+  body
+    p.secondary
+      strong
+        span Incorrect username/password entered. Please re-enter your username/password.
+    p.tertiary
+      a(href='/')
+        strong
+          span Back to login

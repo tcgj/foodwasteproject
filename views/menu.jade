@@ -1,0 +1,157 @@
+doctype html(lang='en')
+head
+    title Food Waste Project
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='stylesheets/menu.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js')
+  body
+    nav.navbar.navbar-expand-md.bg-dark.navbar-dark
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link(href='/') Home
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+        span.navbar-toggler-icon
+      #collapsibleNavbar.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item
+              a.navbar-brand(href='/menu') Menu
+            li.nav-item
+              a.nav-link(href='/pollresults') Poll Results
+          if(!user)
+            form.form-inline.login-form(action="/login", method="post")
+              .form-group
+                label(for='username') Username:
+                input#username.form-control(type='text', placeholder='Enter NUSNET ID', name='username')
+              .form-group
+                label(for='pwd') Password:
+                input#pwd.form-control(type='password', placeholder='Enter password', name='password')
+              button.btn.btn-primary(type='submit') Submit
+          if(user)
+            ul.navbar-nav.login-form
+              li.nav-item
+                label You are currently logged in as #{user.username}
+              li.nav-item
+                a.nav-link(href="/logout") Logout
+    .container-fluid
+      .row
+        .col-sm-5
+          .menu-image
+            img(src='images/bannerfood5.jpg', alt='Counter Menu')
+          .mt-3
+            h1.menu-title Daily Menu
+            br
+            p Select the date to view the menu:
+            select.custom-select.custom-select-lg.mb-3(name='date')
+              option(selected='') Select Date
+              option(value='date1') 20/01/2019
+              option(value='date2') 21/01/2019
+              option(value='date3') 22/01/2019
+              option(value='date4') 23/01/2019
+              option(value='date5') 24/01/2019
+              option(value='date6') 25/01/2019
+        .col-sm-1
+        .col-sm-1.selection-div
+          form(action='/submit')
+            .breakfast
+              label.image-radio
+                img.img-responsive(src='images/breakfast1.jpg')
+                input(type='radio', name='image_radio', value='1')
+                i.glyphicon.glyphicon-ok.hidden
+            .breakfast
+              label.image-radio
+                img.img-responsive(src='images/breakfast2.jpg')
+                input(type='radio', name='image_radio', value='2')
+                i.glyphicon.glyphicon-ok.hidden
+            .breakfast
+              label.image-radio
+                img.img-responsive(src='images/breakfast3.jpeg')
+                input(type='radio', name='image_radio', value='3')
+                i.glyphicon.glyphicon-ok.hidden
+            .breakfast
+              label.image-radio
+                img.img-responsive(src='images/breakfast4.jpg')
+                input(type='radio', name='image_radio', value='4')
+                i.glyphicon.glyphicon-ok.hidden
+            .breakfast
+              label.image-radio
+                img.img-responsive(src='images/breakfast5.jpg')
+                input(type='radio', name='image_radio', value='5')
+                i.glyphicon.glyphicon-ok.hidden
+            .breakfast
+              label.image-radio
+                img.img-responsive(src='images/breakfast6.jpg')
+                input(type='radio', name='image_radio', value='6')
+                i.glyphicon.glyphicon-ok.hidden
+            input(type='submit', value='Submit')
+        .col-sm-5.selection-div
+          span.meal-title HELP YOURSELF
+          p.
+            WHITE BREAD
+            br
+            WHOLEMEAL BREAD
+            br
+            COFFEE/TEA/MILO
+            br
+          span.meal-title WESTERN
+          p.
+            WAFFLE W MAPLE SYRUP
+            br
+            SUNNY SIDE-UP EGGS
+            br
+            BACON STRIPS
+            br
+          span.meal-title ASIAN
+          p.
+            FRIED EGG NOODLE W VEGETABLE
+            br
+            CHAR SIEW
+            br
+            GREEN CHILLIS
+            br
+          span.meal-title INDIAN
+          p.
+            THOSAI MASALA
+            br
+            CURRY
+            br
+            DHAL
+            br
+          span.meal-title VEGETARIAN
+          p.
+            VEGETABLE PANCAKES
+            br
+            GUACAMOLE
+            br
+            MAYO DIP
+            br
+          span.meal-title GRAB AND GO
+          p.
+            SANDWICH
+            br
+            SCRAMBLED EGGS
+            br
+            PACKET DRINKS
+            br
+    script.
+      $(document).ready(function () {
+      // add/remove checked class
+      $(".image-radio").each(function () {
+      if ($(this).find('input[type="radio"]').first().attr("checked")) {
+      $(this).addClass('image-radio-checked');
+      } else {
+      $(this).removeClass('image-radio-checked');
+      }
+      });
+      // sync the input state
+      $(".image-radio").on("click", function (e) {
+      $(".image-radio").removeClass('image-radio-checked');
+      $(this).addClass('image-radio-checked');
+      var $radio = $(this).find('input[type="radio"]');
+      $radio.prop("checked", !$radio.prop("checked"));
+      e.preventDefault();
+      });
+      });

@@ -1,0 +1,89 @@
+doctype html(lang='en')
+head
+    title Food Waste Project
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='stylesheets/poll results.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js')
+  body
+    nav.navbar.navbar-expand-md.bg-dark.navbar-dark
+      ul.navbar-nav
+        li.nav-item
+            a.nav-link(href='/') Home
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+        span.navbar-toggler-icon
+      #collapsibleNavbar.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='/menu') Menu
+            li.nav-item
+              a.navbar-brand(href='/pollresults') Poll Results
+          if(!user)
+            form.form-inline.login-form(action="/login", method="post")
+              .form-group
+                label(for='username') Username:
+                input#username.form-control(type='text', placeholder='Enter NUSNET ID', name='username')
+              .form-group
+                label(for='pwd') Password:
+                input#pwd.form-control(type='password', placeholder='Enter password', name='password')
+              button.btn.btn-primary(type='submit') Submit
+          if(user)
+            ul.navbar-nav.login-form
+              li.nav-item
+                label You are currently logged in as #{user.username}
+              li.nav-item
+                a.nav-link(href="/logout") Logout
+    .container-fluid
+      .row
+        .col-sm-5
+          .poll-image
+            img(src='images/bannerfood5.jpg', alt='Counter Menu')
+          .mt-3
+            h1.poll-title Poll Results
+            br
+            p Select the date to view what your friends are eating:
+            form
+              select.custom-select.custom-select-lg.mb-3(name='date')
+                option(selected='') Select Date
+                option(value='date1') 20/01/2019
+                option(value='date2') 21/01/2019
+                option(value='date3') 22/01/2019
+                option(value='date4') 23/01/2019
+                option(value='date5') 24/01/2019
+                option(value='date6') 25/01/2019
+        .col-sm-1
+        .col-sm-1.pic-div
+          img.img-responsive(src='images/breakfast1.jpg')
+          img.img-responsive(src='images/breakfast2.jpg')
+          img.img-responsive(src='images/breakfast3.jpeg')
+          img.img-responsive(src='images/breakfast4.jpg')
+          img.img-responsive(src='images/breakfast5.jpg')
+          img.img-responsive(src='images/breakfast6.jpg')
+        .col-sm-1
+        .col-sm-4.poll-div
+          97
+          span.bar |
+          |   30.4%
+          br
+          62
+          span.bar |
+          |   19.4%
+          br
+          42
+          span.bar |
+          |   13.2%
+          br
+          85
+          span.bar |
+          |   26.6%
+          br
+          20
+          span.bar |
+          |   6.27%
+          br
+          13
+          span.bar |
+          |   3.13%

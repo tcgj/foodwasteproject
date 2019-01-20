@@ -10,15 +10,15 @@ head
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js')
   body
     nav.navbar.navbar-expand-md.bg-dark.navbar-dark
-      a.navbar-brand(href='#') Home
+      a.navbar-brand(href='/') Home
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
         span.navbar-toggler-icon
       #collapsibleNavbar.collapse.navbar-collapse
         ul.navbar-nav
           li.nav-item
-            a.nav-link(href='#') Menu
+            a.nav-link(href='/menu') Menu
           li.nav-item
-            a.nav-link(href='#') Account
+            a.nav-link(href='/pollresults') Poll Results
         if(!user)
           form.form-inline.login-form(action="/login", method="post")
             .form-group

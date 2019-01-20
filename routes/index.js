@@ -31,9 +31,23 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/error'
   res.redirect('/');
 });
 
+router.get('/error', function(req, res) {
+  res.render('error', { user : req.user });
+});
+
+
 router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
+});
+
+router.get('/menu', function(req, res) {
+  res.render('menu', { user : req.user });
+});
+
+
+router.get('/pollresults', function(req, res) {
+  res.render('pollresults', { user : req.user });
 });
 
 router.get('/ping', function(req, res){
