@@ -9,18 +9,6 @@
 	padding: 10px
 }
 
-.caption-RC {
-	font-size: 150%
-}
-
-.caption-RCheader {
-	font-size: 400%;
-}
-
-.caption-box {
-	background: rgba(51,51,51,0.9); padding: 10px; border: 1px grey; margin-bottom: 290px;
-}
-
 .menu-image img {
 	width: 93%;
 	margin-left: 50px;
@@ -34,6 +22,7 @@
 
 .menu-title {
 	font-size: 780%;
+	text-align:center;
 	color: black;
 	border: double; padding: 10px;
 	padding-bottom: 30px
